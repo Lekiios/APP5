@@ -2,7 +2,7 @@ fragments_txt_path = 'assets/fragments.txt'
 fragments_s_txt_path = 'assets/fragments_s.txt'
 solution_path = 'assets/solution.txt'
 
-# Lecture des fichiers de localisation
+# Read files
 def read_files():
     # Read fragments real position (use map to index correctly with any solution order)
     fragments = {}
@@ -47,7 +47,7 @@ def precision(fragments, solution, invalid_fragments, delta_x=1, delta_y=1, delt
         return 0
     return found / total
 
-# Lire les données
+# Read files
 fragments, solution, invalid_fragments = read_files()
 
 # Process precision (you can adjust tolerance with delta x / y / r)
