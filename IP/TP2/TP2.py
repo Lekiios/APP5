@@ -1,4 +1,4 @@
-from functions import detect_circles
+from functions import detect_circles, detect_circles_with_gradient_angle
 import cv2
 
 # four.png --------------------------------------------------------------------------------------------------------
@@ -14,7 +14,14 @@ detect_circles(four, 4)
 # if coins is None:
 #     raise FileNotFoundError("Couldn't find the loaded image.")
 #
-# detect_circles(coins, 2, edges_threshold=0.4)
+# detect_circles(coins, 2, edges_threshold=0.
+
+# coins2.png -----------------------------------------------------------------------------------------------------------
+# coins2 = cv2.imread("images/coins2.jpg", cv2.IMREAD_GRAYSCALE)
+# if coins2 is None:
+#     raise FileNotFoundError("Couldn't find the loaded image.")
+#
+# detect_circles_with_gradient_angle(coins2, 8, edges_threshold=0.4, blur_kernel=(5, 5))
 
 # fourn.png -----------------------------------------------------------------------------------------------------------
 # fourn = cv2.imread("images/fourn.png", cv2.IMREAD_GRAYSCALE)
