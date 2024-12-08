@@ -28,4 +28,4 @@ detect_circles(four, 4)
 # if moon_coins is None:
 #     raise FileNotFoundError("Couldn't find the loaded image.")
 #
-# detect_circles(moon_coins, 4, edges_threshold=0.4)
+# detect_circles(moon_coins, 4, edges_threshold=0.4, blur_kernel=(5, 5))
