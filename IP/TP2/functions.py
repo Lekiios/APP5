@@ -26,8 +26,8 @@ def detect_circles(image, n, blur_kernel=(3, 3), edges_threshold=0.5, delta_r=2,
         cv2.destroyWindow("Blurred")
 
     # Sobel gradient ------------------------------------------------------------------------------------------------------
-    grad_x = cv2.Sobel(image, ddepth=cv2.CV_32F, dx=1, dy=0, ksize=3, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
-    grad_y = cv2.Sobel(image, ddepth=cv2.CV_32F, dx=0, dy=1, ksize=3, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
+    grad_x = cv2.Sobel(image, ddepth=cv2.CV_64F, dx=1, dy=0, ksize=3, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
+    grad_y = cv2.Sobel(image, ddepth=cv2.CV_64F, dx=0, dy=1, ksize=3, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
 
     # Magnitude of the gradient -------------------------------------------------------------------------------------------
     magnitude = cv2.magnitude(grad_x, grad_y)
