@@ -2,6 +2,7 @@
 Image Processing TP3
 LACZKOWSKI Lorenzo
 LE BOT Maxime
+APP 5 IIM
 """
 
 import cv2
