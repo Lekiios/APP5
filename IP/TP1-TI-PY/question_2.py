@@ -1,3 +1,9 @@
+"""
+LACZKOWSKI Lorenzo
+LE BOT Maxime
+APP5 IIM
+"""
+
 fragments_txt_path = 'assets/fragments.txt'
 fragments_s_txt_path = 'assets/fragments_s.txt'
 solution_path = 'assets/solution.txt'

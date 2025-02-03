@@ -1,0 +1,14 @@
+{
+  "name": "architecture-service",
+  "version": "1.0.0",
+  "description": "Node.js practical",
+  "main": "contacts.js",
+  "scripts": {},
+  "author": "Lekiios",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "lodash": "^4.17.21",
+    "yargs": "^17.7.2"
+  }
+}

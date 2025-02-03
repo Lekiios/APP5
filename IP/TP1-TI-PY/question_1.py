@@ -1,3 +1,9 @@
+"""
+LACZKOWSKI Lorenzo
+LE BOT Maxime
+APP5 IIM
+"""
+
 import numpy as np
 import os
 import cv2

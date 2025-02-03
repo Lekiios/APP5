@@ -3,7 +3,7 @@ import numpy as np
 from scipy.ndimage import maximum_filter
 
 # Loading image -------------------------------------------------------------------------------------------------------
-image_path = "images/four.png"
+image_path = "images/coins2.jpg"
 image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 if image is None:
     raise FileNotFoundError("Couldn't find the loaded image.")
@@ -40,7 +40,7 @@ cv2.waitKey(0)
 cv2.destroyWindow("Magnitude")
 
 # Extracting the edges ------------------------------------------------------------------------------------------------
-t = 0.6 # % of maximum value in magnitude
+t = 0.5 # % of maximum value in magnitude
 threshold = t * magnitude.max()
 edges = np.where(magnitude >= threshold, 255, 0).astype(np.uint8)
 
@@ -79,7 +79,7 @@ local_max = maximum_filter(acc, size=3)  # Thanks scipy <3
 maxima = (acc == local_max) & (acc > 0)
 
 # Retrieve results ----------------------------------------------------------------------------------------------------
-N = 5
+N = 8
 indices = np.argpartition(acc.flatten(), -N)[-N:]
 indices = np.unravel_index(indices, acc.shape)
 
