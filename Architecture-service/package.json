@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "Node.js practical",
   "main": "contacts.js",
-  "scripts": {},
+  "scripts": {
+    "check": "prettier --check .",
+    "format": "prettier --write ."
+  },
   "author": "Lekiios",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
     "lodash": "^4.17.21",
+    "prettier": "^3.4.2",
     "yargs": "^17.7.2"
   }
 }
