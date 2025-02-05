@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management</title>
+    <script>
+        async function fetchContacts() {
+            const response = await fetch('/rest/contacts/');
+            const contacts = await response.json();
+            document.getElementById('contacts').innerText = JSON.stringify(contacts, null, 2);
+        }
+
+        async function fetchContactById() {
+            const id = document.getElementById('contactId').value;
+            const response = await fetch(`/rest/contacts/${id}`);
+            const contact = await response.json();
+            document.getElementById('contact').innerText = JSON.stringify(contact, null, 2);
+        }
+
+        async function addContact() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            const response = await fetch('/rest/contacts/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ firstName, lastName, address, phone })
+            });
+            const contact = await response.json();
+            document.getElementById('newContact').innerText = JSON.stringify(contact, null, 2);
+        }
+
+        async function updateContact() {
+            const id = document.getElementById('updateId').value;
+            const firstName = document.getElementById('updateFirstName').value;
+            const lastName = document.getElementById('updateLastName').value;
+            const address = document.getElementById('updateAddress').value;
+            const phone = document.getElementById('updatePhone').value;
+
+            const response = await fetch(`/rest/contacts/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ firstName, lastName, address, phone })
+            });
+            const contact = await response.json();
+            document.getElementById('updatedContact').innerText = JSON.stringify(contact, null, 2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Contact Management</h1>
+
+    <h2>Fetch All Contacts</h2>
+    <button onclick="fetchContacts()">Get Contacts</button>
+    <pre id="contacts"></pre>
+
+    <h2>Fetch Contact by ID</h2>
+    <input type="text" id="contactId" placeholder="Contact ID">
+    <button onclick="fetchContactById()">Get Contact</button>
+    <pre id="contact"></pre>
+
+    <h2>Add New Contact</h2>
+    <input type="text" id="firstName" placeholder="First Name">
+    <input type="text" id="lastName" placeholder="Last Name">
+    <input type="text" id="address" placeholder="Address">
+    <input type="text" id="phone" placeholder="Phone">
+    <button onclick="addContact()">Add Contact</button>
+    <pre id="newContact"></pre>
+
+    <h2>Update Contact</h2>
+    <input type="text" id="updateId" placeholder="Contact ID">
+    <input type="text" id="updateFirstName" placeholder="First Name">
+    <input type="text" id="updateLastName" placeholder="Last Name">
+    <input type="text" id="updateAddress" placeholder="Address">
+    <input type="text" id="updatePhone" placeholder="Phone">
+    <button onclick="updateContact()">Update Contact</button>
+    <pre id="updatedContact"></pre>
+</body>
+</html>
